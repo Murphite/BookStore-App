@@ -1,0 +1,24 @@
+C:\Users\DECAGON\source\repos\SL Proj\Bulky\Bulky.Utility\bin\Debug\net7.0\Bulky.Utility.deps.json
+C:\Users\DECAGON\source\repos\SL Proj\Bulky\Bulky.Utility\bin\Debug\net7.0\Bulky.Utility.dll
+C:\Users\DECAGON\source\repos\SL Proj\Bulky\Bulky.Utility\bin\Debug\net7.0\Bulky.Utility.pdb
+C:\Users\DECAGON\source\repos\SL Proj\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DECAGON\source\repos\SL Proj\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.AssemblyInfoInputs.cache
+C:\Users\DECAGON\source\repos\SL Proj\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.AssemblyInfo.cs
+C:\Users\DECAGON\source\repos\SL Proj\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.csproj.CoreCompileInputs.cache
+C:\Users\DECAGON\source\repos\SL Proj\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.dll
+C:\Users\DECAGON\source\repos\SL Proj\Bulky\Bulky.Utility\obj\Debug\net7.0\refint\Bulky.Utility.dll
+C:\Users\DECAGON\source\repos\SL Proj\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.pdb
+C:\Users\DECAGON\source\repos\SL Proj\Bulky\Bulky.Utility\obj\Debug\net7.0\ref\Bulky.Utility.dll
+C:\Users\DECAGON\source\repos\SL Proj\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\bin\Debug\net7.0\Bulky.Utility.deps.json
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\bin\Debug\net7.0\Bulky.Utility.dll
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\bin\Debug\net7.0\Bulky.Utility.pdb
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.AssemblyInfo.cs
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.dll
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\refint\Bulky.Utility.dll
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.pdb
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\ref\Bulky.Utility.dll
