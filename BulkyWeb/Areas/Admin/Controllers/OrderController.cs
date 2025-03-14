@@ -66,6 +66,7 @@ namespace BulkyWeb.Areas.Admin.Controllers
             {
                 orderHeaderFromDb.Carrier = OrderVM.OrderHeader.TrackingNumber;
             }
+
             _unitOfWork.OrderHeader.Update(orderHeaderFromDb);
             _unitOfWork.Save();
 
@@ -205,51 +206,92 @@ namespace BulkyWeb.Areas.Admin.Controllers
 
         #region API CALLS
 
+        //[HttpGet]
+        //public IActionResult GetAll(string status)
+        //{
+        //    IEnumerable<OrderHeader> objOrderHeaders;
+        //    if( User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Employee))
+        //    {
+        //        objOrderHeaders = _unitOfWork.OrderHeader.GetAll(includeProperties: "ApplicationUser").ToList();
+        //    }
+        //    else
+        //    {
+        //        var claimsIdentity = (ClaimsIdentity)User.Identity;
+        //        var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+        //        objOrderHeaders = _unitOfWork.OrderHeader.GetAll(u => u.ApplicationUserId == userId, includeProperties: "ApplicationUser");
+        //    }
+
+
+        //   // IEnumerable<OrderHeader> objOrderHeaders = _unitOfWork.OrderHeader.GetAll(includeProperties: "ApplicationUser").ToList();
+
+        //    switch (status)
+        //    {
+        //        case "pending":
+        //            objOrderHeaders = objOrderHeaders.Where(u => u.PaymentStatus == SD.PaymentStatusDelayedPayment);
+        //            break;
+        //        case "inprocess":
+        //            objOrderHeaders = objOrderHeaders.Where(u => u.OrderStatus == SD.StatusInProcess);
+        //            break;
+        //        case "completed":
+        //            objOrderHeaders = objOrderHeaders.Where(u => u.OrderStatus == SD.StatusShipped);
+        //            break;
+        //        case "approved":
+        //            objOrderHeaders = objOrderHeaders.Where(u => u.OrderStatus == SD.StatusApproved);
+        //            break;
+        //        case "cancelled":
+        //            objOrderHeaders = objOrderHeaders.Where(u => u.OrderStatus == SD.StatusCancelled);
+        //            break;
+        //        default:
+        //            break;
+        //    }
+
+
+        //    return Json(new { data = objOrderHeaders });
+        //}
+
         [HttpGet]
         public IActionResult GetAll(string status)
         {
             IEnumerable<OrderHeader> objOrderHeaders;
-            if( User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Employee))
+
+            if (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Employee))
             {
                 objOrderHeaders = _unitOfWork.OrderHeader.GetAll(includeProperties: "ApplicationUser").ToList();
+
+                var orderData = objOrderHeaders.Select(m => new
+                {
+                    id = m.Id,
+                    name = m.ApplicationUser.Name, // Ensure ApplicationUser has FullName
+                    phonenumber = m.ApplicationUser.PhoneNumber,
+                    email = m.ApplicationUser.Email,
+                    status = m.PaymentStatus,
+                    total = m.OrderTotal
+                }).ToList();
+
+                return Json(new { data = orderData });
             }
             else
             {
                 var claimsIdentity = (ClaimsIdentity)User.Identity;
                 var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
 
-                objOrderHeaders = _unitOfWork.OrderHeader.GetAll(u => u.ApplicationUserId == userId, includeProperties: "ApplicationUser");
+                objOrderHeaders = _unitOfWork.OrderHeader.GetAll(u => u.ApplicationUserId == userId, includeProperties: "ApplicationUser").ToList();
+
+                var orderData = objOrderHeaders.Select(m => new
+                {
+                    id = m.Id,
+                    name = m.ApplicationUser.Name,
+                    phonenumber = m.ApplicationUser.PhoneNumber,
+                    email = m.ApplicationUser.Email,
+                    status = m.PaymentStatus,
+                    total = m.OrderTotal
+                }).ToList();
+
+                return Json(new { data = orderData });
             }
-
-
-           // IEnumerable<OrderHeader> objOrderHeaders = _unitOfWork.OrderHeader.GetAll(includeProperties: "ApplicationUser").ToList();
-
-            switch (status)
-            {
-                case "pending":
-                    objOrderHeaders = objOrderHeaders.Where(u => u.PaymentStatus == SD.PaymentStatusDelayedPayment);
-                    break;
-                case "inprocess":
-                    objOrderHeaders = objOrderHeaders.Where(u => u.OrderStatus == SD.StatusInProcess);
-                    break;
-                case "completed":
-                    objOrderHeaders = objOrderHeaders.Where(u => u.OrderStatus == SD.StatusShipped);
-                    break;
-                case "approved":
-                    objOrderHeaders = objOrderHeaders.Where(u => u.OrderStatus == SD.StatusApproved);
-                    break;
-                case "cancelled":
-                    objOrderHeaders = objOrderHeaders.Where(u => u.OrderStatus == SD.StatusCancelled);
-                    break;
-                default:
-                    break;
-            }
-
-
-            return Json(new { data = objOrderHeaders });
         }
 
-        
 
         #endregion
 

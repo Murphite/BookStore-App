@@ -27,6 +27,13 @@ a.navbar-brand {
     border-color: #1861ac;
 }*/
 
+.nav-link.dropdown-toggle {
+    color: #a1a3a2 !important; /* Keeps the default text color */
+    background-color: transparent !important;
+    border: none !important;
+}
+
+
 html {
     font-size: 14px;
 }

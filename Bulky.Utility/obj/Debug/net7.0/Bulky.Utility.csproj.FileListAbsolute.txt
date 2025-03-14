@@ -22,3 +22,4 @@ C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulk
 C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\refint\Bulky.Utility.dll
 C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.pdb
 C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\ref\Bulky.Utility.dll
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Utility\obj\Debug\net7.0\Bulky.Utility.sourcelink.json

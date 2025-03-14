@@ -27,6 +27,11 @@
 
 }
 
+@{
+    ViewData["Title"] = "Order Page";
+}
+
+
 <div class="card shadow border-0 my-4">
     <div class="card-header bg-secondary bg-gradient ml-0 py-3">
         <div class="row">
@@ -78,3 +83,37 @@
 @section Scripts {
     <script src="~/js/order.js"></script>
 }
+
+<script>
+    $(document).ready(function () {
+        loadDataTable();
+    });
+
+    function loadDataTable() {
+        if ($.fn.DataTable.isDataTable("#tblData")) {
+            $("#tblData").DataTable().clear().destroy();
+        }
+
+        $("#tblData").DataTable({
+            "ajax": {
+                "url": "/Order/GetAll",
+                "type": "GET",
+                "datatype": "json"
+            },
+            "columns": [
+                { "data": "id" },
+                { "data": "name" },
+                { "data": "email" },
+                { "data": "phonenumber" },
+                { "data": "status" },
+                { "data": "total" },
+                {
+                    "data": null,
+                    "render": function (data, type, row) {
+                        return `<a href="/Order/Details/${row.id}" class="btn btn-primary">View</a>`;
+                    }
+                }
+            ]
+        });
+    }
+</script>

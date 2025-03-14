@@ -22,3 +22,4 @@ C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Models\obj\Debug\net7.0\Bulky
 C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Models\obj\Debug\net7.0\refint\Bulky.Models.dll
 C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Models\obj\Debug\net7.0\Bulky.Models.pdb
 C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Models\obj\Debug\net7.0\ref\Bulky.Models.dll
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\Bulky.Models\obj\Debug\net7.0\Bulky.Models.sourcelink.json

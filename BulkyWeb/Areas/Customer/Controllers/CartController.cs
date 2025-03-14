@@ -74,6 +74,7 @@ namespace BulkyWeb.Areas.Customer.Controllers
             return View(ShoppingCartVM);
         }
 
+
         [HttpPost]
         [ActionName("Summary")]
 		public IActionResult SummaryPOST()
@@ -87,13 +88,21 @@ namespace BulkyWeb.Areas.Customer.Controllers
             ShoppingCartVM.OrderHeader.ApplicationUserId = userId;
 
 			ApplicationUser applicationUser = _unitOfWork.ApplicationUser.Get(u => u.Id == userId);
+            ShoppingCartVM.OrderHeader.Email = applicationUser.Email;
+
             foreach (var cart in ShoppingCartVM.ShoppingCartList)
 			{
 				cart.Price = GetPriceBasedOnQuantity(cart);
 				ShoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
 			}
 
-            if(applicationUser.CompanyId.GetValueOrDefault() == 0)
+            if (string.IsNullOrEmpty(ShoppingCartVM.OrderHeader.State))
+            {
+                ModelState.AddModelError("OrderHeader.State", "State is required.");
+                return View(ShoppingCartVM);
+            }
+
+            if (applicationUser.CompanyId.GetValueOrDefault() == 0)
             {
                 //it is a regular customer 
                 ShoppingCartVM.OrderHeader.PaymentStatus = SD.PaymentStatusPending;
@@ -126,11 +135,11 @@ namespace BulkyWeb.Areas.Customer.Controllers
 			{
                 //it is a regular customer account and we need to capture payment
                 //stripe logic
-                var domain = "https://localhost:44380/";
+                var domain = "https://localhost:5187/";
 				var options = new SessionCreateOptions
 				{
-					SuccessUrl = domain+ $"customer/cart/OrderConfirmation?id={ShoppingCartVM.OrderHeader.Id}",
-                    CancelUrl = domain+"customer/cart/index",
+					SuccessUrl = domain+ $"Customer/Cart/OrderConfirmation?id={ShoppingCartVM.OrderHeader.Id}",
+                    CancelUrl = domain+"Customer/Cart/Index",
 					LineItems = new List<SessionLineItemOptions>(),
 					Mode = "payment",
 				};

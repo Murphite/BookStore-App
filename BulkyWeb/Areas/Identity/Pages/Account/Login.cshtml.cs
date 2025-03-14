@@ -31,8 +31,9 @@ namespace BulkyWeb.Areas.Identity.Pages.Account
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>        [BindProperty]
-        public InputModel Input { get; set; }
+        /// </summary>        
+        [BindProperty]
+        public InputModel Input { get; set; } = new InputModel();
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -135,5 +136,6 @@ namespace BulkyWeb.Areas.Identity.Pages.Account
             // If we got this far, something failed, redisplay form
             return Page();
         }
+
     }
 }

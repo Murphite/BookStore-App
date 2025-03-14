@@ -270,3 +270,4 @@ C:\Users\Admin\Downloads\Project\Bulky\Bulky\BulkyWeb\obj\Debug\net7.0\refint\Bu
 C:\Users\Admin\Downloads\Project\Bulky\Bulky\BulkyWeb\obj\Debug\net7.0\BulkyWeb.pdb
 C:\Users\Admin\Downloads\Project\Bulky\Bulky\BulkyWeb\obj\Debug\net7.0\BulkyWeb.genruntimeconfig.cache
 C:\Users\Admin\Downloads\Project\Bulky\Bulky\BulkyWeb\obj\Debug\net7.0\ref\BulkyWeb.dll
+C:\Users\Admin\Downloads\Project\Bulky\Bulky\BulkyWeb\obj\Debug\net7.0\BulkyWeb.sourcelink.json

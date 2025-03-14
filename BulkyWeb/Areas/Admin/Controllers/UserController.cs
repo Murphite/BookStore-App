@@ -113,14 +113,29 @@ namespace BulkyWeb.Areas.Admin.Controllers
             var userRoles = _db.UserRoles.ToList();
             var roles = _db.Roles.ToList();
 
-            foreach(var user in objUserList)
+            foreach (var user in objUserList)
             {
-                var roleId = userRoles.FirstOrDefault(u => u.UserId == user.Id).RoleId;
-                user.Role = roles.FirstOrDefault(u => u.Id == roleId).Name;
+                var userRole = userRoles.FirstOrDefault(u => u.UserId == user.Id);
+                if (userRole != null) // Ensure userRole is not null before accessing RoleId
+                {
+                    var role = roles.FirstOrDefault(u => u.Id == userRole.RoleId);
+                    if (role != null) // Ensure role is not null before accessing Name
+                    {
+                        user.Role = role.Name;
+                    }
+                    else
+                    {
+                        user.Role = "No Role Assigned"; // Default value if role is missing
+                    }
+                }
+                else
+                {
+                    user.Role = "No Role Assigned"; // Default value if user has no role
+                }
 
                 if (user.Company == null)
                 {
-                    user.Company = new()
+                    user.Company = new Company()
                     {
                         Name = ""
                     };
@@ -128,6 +143,7 @@ namespace BulkyWeb.Areas.Admin.Controllers
             }
             return Json(new { data = objUserList });
         }
+
 
 
         [HttpPost]
